@@ -19,6 +19,8 @@ contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
     address public feeCollector;
 
     INFTLockProxy public lockProxy;
+    
+    mapping(address => bool) feeTokens;
 
     struct CallArgs {
         bytes toAddress;
@@ -26,7 +28,7 @@ contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
     }
 
     event PolyWrapperLock(address indexed fromAsset, address indexed sender, uint64 toChainId, address toAddress, uint256 tokenId, uint256 fee, uint id);
-    event PolyWrapperSpeedUp(address indexed fromAsset, bytes indexed txHash, address indexed sender, uint256 efee);
+    event PolyWrapperSpeedUp(address indexed feeToken, bytes indexed txHash, address indexed sender, uint256 efee);
 
     constructor(address _owner, uint _chainId) public {
         require(_chainId != 0, "!legal");
@@ -43,6 +45,11 @@ contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
         require(_lockProxy != address(0));
         lockProxy = INFTLockProxy(_lockProxy);
         require(lockProxy.managerProxyContract() != address(0), "not lockproxy");
+    }
+
+    function setFeeToken(address _asset) external onlyOwner {
+        require(_asset != address(0));
+        feeTokens[_asset] = true;
     }
 
     function pause() external onlyOwner {
@@ -62,24 +69,22 @@ contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
         }
     }
 
-    function lock(address fromAsset, uint64 toChainId, address toAddress, uint256 tokenId, uint256 fee, uint id) external payable nonReentrant whenNotPaused {    
+    function lock(address fromAsset, uint64 toChainId, address toAddress, uint256 tokenId, address feeToken, uint256 fee, uint id) external payable nonReentrant whenNotPaused {    
         require(toChainId != chainId && toChainId != 0, "!toChainId");
-        _pull(fromAsset, fee);
+
+        _pull(feeToken, fee);
         _push(fromAsset, toChainId, toAddress, tokenId);
         emit PolyWrapperLock(fromAsset, msg.sender, toChainId, toAddress, tokenId, fee, id);
     }
 
-    function speedUp(address fromAsset, bytes memory txHash, uint256 fee) external payable nonReentrant whenNotPaused {
-        _pull(fromAsset, fee);
-        emit PolyWrapperSpeedUp(fromAsset, txHash, msg.sender, fee);
+    function speedUp(address feeToken, bytes memory txHash, uint256 fee) external payable nonReentrant whenNotPaused {
+        _pull(feeToken, fee);
+        emit PolyWrapperSpeedUp(feeToken, txHash, msg.sender, fee);
     }
 
-    function _pull(address fromAsset, uint256 fee) internal {
-        if (fromAsset == address(0)) {
-            require(msg.value == fee, "insufficient ether");
-        } else {
-            IERC20(fromAsset).safeTransferFrom(msg.sender, address(this), fee);
-        }
+    function _pull(address feeToken, uint256 fee) internal {
+        require(feeTokens[feeToken] == true, "!feeToken");
+        IERC20(feeToken).safeTransferFrom(msg.sender, address(this), fee);
     }
 
     function _push(address fromAsset, uint64 toChainId, address toAddress, uint256 tokenId) internal {
