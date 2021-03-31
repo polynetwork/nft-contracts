@@ -12,8 +12,6 @@ abigen --sol ./contracts_nftlockproxy/NFTLockProxy.sol --pkg nft_lock_proxy_abi 
 abigen --sol ./contracts_nftlockproxy/erc721_template/CrossChainNFTMapping.sol --pkg nft_mapping_abi > ./go_abi/nft_mapping_abi/nft_mapping_abi.go
 
 abigen --sol ./contracts_nftlockproxy/PolyNFTWrap.sol --pkg nft_wrap_abi > ./go_abi/nft_wrap_abi/nft_wrap_abi.go
-
-
 ```
 
 ## Truffle test instruction

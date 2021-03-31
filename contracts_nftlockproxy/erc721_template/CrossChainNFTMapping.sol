@@ -18,7 +18,7 @@ contract CrossChainNFTMapping is ERC721 {
         _;
     }
 
-    function mintWithURI(address to, uint256 tokenId, string memory uri) public onlyProxy {
+    function mintWithURI(address to, uint256 tokenId, string memory uri) external {
         require(!_exists(tokenId), "token id already exist");
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);

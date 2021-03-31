@@ -20,8 +20,6 @@ contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
 
     INFTLockProxy public lockProxy;
     
-    mapping(address => bool) feeTokens;
-
     struct CallArgs {
         bytes toAddress;
         uint64 toChainId;
@@ -45,11 +43,6 @@ contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
         require(_lockProxy != address(0));
         lockProxy = INFTLockProxy(_lockProxy);
         require(lockProxy.managerProxyContract() != address(0), "not lockproxy");
-    }
-
-    function setFeeToken(address _asset) external onlyOwner {
-        require(_asset != address(0));
-        feeTokens[_asset] = true;
     }
 
     function pause() external onlyOwner {
@@ -83,8 +76,11 @@ contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
     }
 
     function _pull(address feeToken, uint256 fee) internal {
-        require(feeTokens[feeToken] == true, "!feeToken");
-        IERC20(feeToken).safeTransferFrom(msg.sender, address(this), fee);
+        if (feeToken == address(0)) {
+            require(msg.value == fee, "insufficient ether");
+        } else {
+            IERC20(feeToken).safeTransferFrom(msg.sender, address(this), fee);
+        }
     }
 
     function _push(address fromAsset, uint64 toChainId, address toAddress, uint256 tokenId) internal {
