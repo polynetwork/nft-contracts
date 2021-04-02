@@ -17,8 +17,7 @@ contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
 
     uint public chainId;
     address public feeCollector;
-
-    INFTLockProxy public lockProxy;
+    address private lockProxy;
     
     struct CallArgs {
         bytes toAddress;
@@ -41,8 +40,8 @@ contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
 
     function setLockProxy(address _lockProxy) external onlyOwner {
         require(_lockProxy != address(0));
-        lockProxy = INFTLockProxy(_lockProxy);
-        require(lockProxy.managerProxyContract() != address(0), "not lockproxy");
+        lockProxy = _lockProxy;
+        require(INFTLockProxy(lockProxy).managerProxyContract() != address(0), "not lock proxy");
     }
 
     function pause() external onlyOwner {
@@ -84,15 +83,12 @@ contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
     }
 
     function _push(address fromAsset, uint64 toChainId, address toAddress, uint256 tokenId) internal {
-        IERC721 nftContract = IERC721(fromAsset);
-        nftContract.approve(address(lockProxy), tokenId);
-
         CallArgs memory callArgs = CallArgs({
             toAddress: abi.encodePacked(toAddress),
             toChainId: toChainId
         });
         bytes memory callData = _serializeCallArgs(callArgs);
-        nftContract.safeTransferFrom(msg.sender, toAddress, tokenId, callData);
+        IERC721(fromAsset).safeTransferFrom(msg.sender, lockProxy, tokenId, callData);
     }
 
     function _serializeCallArgs(CallArgs memory args) internal pure returns (bytes memory) {
