@@ -13,7 +13,7 @@ import "./libs/math/SafeMath.sol";
 import "./core/cross_chain_manager/interface/IEthCrossChainManager.sol";
 import "./core/cross_chain_manager/interface/IEthCrossChainManagerProxy.sol";
 
-contract NFTLockProxy is IERC721Receiver, Ownable {
+contract PolyNFTLockProxy is IERC721Receiver, Ownable {
     using SafeMath for uint;
     using Address for address;
 

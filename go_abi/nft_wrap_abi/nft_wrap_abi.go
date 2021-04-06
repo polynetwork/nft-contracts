@@ -1818,11 +1818,11 @@ func (_IERC721 *IERC721Filterer) ParseTransfer(log types.Log) (*IERC721Transfer,
 	return event, nil
 }
 
-// INFTLockProxyABI is the input ABI used to generate the binding from.
-const INFTLockProxyABI = "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}],\"name\":\"assetHashMap\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"fromAssetHash\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"toChainId\",\"type\":\"uint64\"},{\"internalType\":\"bytes\",\"name\":\"toAssetHash\",\"type\":\"bytes\"}],\"name\":\"bindAssetHash\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"toChainId\",\"type\":\"uint64\"},{\"internalType\":\"bytes\",\"name\":\"targetProxyHash\",\"type\":\"bytes\"}],\"name\":\"bindProxyHash\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"managerProxyContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}],\"name\":\"proxyHashMap\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"eccmpAddr\",\"type\":\"address\"}],\"name\":\"setManagerProxy\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]"
+// IPolyNFTLockProxyABI is the input ABI used to generate the binding from.
+const IPolyNFTLockProxyABI = "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}],\"name\":\"assetHashMap\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"fromAssetHash\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"toChainId\",\"type\":\"uint64\"},{\"internalType\":\"bytes\",\"name\":\"toAssetHash\",\"type\":\"bytes\"}],\"name\":\"bindAssetHash\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"toChainId\",\"type\":\"uint64\"},{\"internalType\":\"bytes\",\"name\":\"targetProxyHash\",\"type\":\"bytes\"}],\"name\":\"bindProxyHash\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"managerProxyContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}],\"name\":\"proxyHashMap\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"eccmpAddr\",\"type\":\"address\"}],\"name\":\"setManagerProxy\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]"
 
-// INFTLockProxyFuncSigs maps the 4-byte function signature to its string representation.
-var INFTLockProxyFuncSigs = map[string]string{
+// IPolyNFTLockProxyFuncSigs maps the 4-byte function signature to its string representation.
+var IPolyNFTLockProxyFuncSigs = map[string]string{
 	"4f7d9808": "assetHashMap(address,uint64)",
 	"3348f63b": "bindAssetHash(address,uint64,bytes)",
 	"379b98f6": "bindProxyHash(uint64,bytes)",
@@ -1831,104 +1831,104 @@ var INFTLockProxyFuncSigs = map[string]string{
 	"af9980f0": "setManagerProxy(address)",
 }
 
-// INFTLockProxy is an auto generated Go binding around an Ethereum contract.
-type INFTLockProxy struct {
-	INFTLockProxyCaller     // Read-only binding to the contract
-	INFTLockProxyTransactor // Write-only binding to the contract
-	INFTLockProxyFilterer   // Log filterer for contract events
+// IPolyNFTLockProxy is an auto generated Go binding around an Ethereum contract.
+type IPolyNFTLockProxy struct {
+	IPolyNFTLockProxyCaller     // Read-only binding to the contract
+	IPolyNFTLockProxyTransactor // Write-only binding to the contract
+	IPolyNFTLockProxyFilterer   // Log filterer for contract events
 }
 
-// INFTLockProxyCaller is an auto generated read-only Go binding around an Ethereum contract.
-type INFTLockProxyCaller struct {
+// IPolyNFTLockProxyCaller is an auto generated read-only Go binding around an Ethereum contract.
+type IPolyNFTLockProxyCaller struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// INFTLockProxyTransactor is an auto generated write-only Go binding around an Ethereum contract.
-type INFTLockProxyTransactor struct {
+// IPolyNFTLockProxyTransactor is an auto generated write-only Go binding around an Ethereum contract.
+type IPolyNFTLockProxyTransactor struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// INFTLockProxyFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
-type INFTLockProxyFilterer struct {
+// IPolyNFTLockProxyFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
+type IPolyNFTLockProxyFilterer struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// INFTLockProxySession is an auto generated Go binding around an Ethereum contract,
+// IPolyNFTLockProxySession is an auto generated Go binding around an Ethereum contract,
 // with pre-set call and transact options.
-type INFTLockProxySession struct {
-	Contract     *INFTLockProxy    // Generic contract binding to set the session for
-	CallOpts     bind.CallOpts     // Call options to use throughout this session
-	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
+type IPolyNFTLockProxySession struct {
+	Contract     *IPolyNFTLockProxy // Generic contract binding to set the session for
+	CallOpts     bind.CallOpts      // Call options to use throughout this session
+	TransactOpts bind.TransactOpts  // Transaction auth options to use throughout this session
 }
 
-// INFTLockProxyCallerSession is an auto generated read-only Go binding around an Ethereum contract,
+// IPolyNFTLockProxyCallerSession is an auto generated read-only Go binding around an Ethereum contract,
 // with pre-set call options.
-type INFTLockProxyCallerSession struct {
-	Contract *INFTLockProxyCaller // Generic contract caller binding to set the session for
-	CallOpts bind.CallOpts        // Call options to use throughout this session
+type IPolyNFTLockProxyCallerSession struct {
+	Contract *IPolyNFTLockProxyCaller // Generic contract caller binding to set the session for
+	CallOpts bind.CallOpts            // Call options to use throughout this session
 }
 
-// INFTLockProxyTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
+// IPolyNFTLockProxyTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
 // with pre-set transact options.
-type INFTLockProxyTransactorSession struct {
-	Contract     *INFTLockProxyTransactor // Generic contract transactor binding to set the session for
-	TransactOpts bind.TransactOpts        // Transaction auth options to use throughout this session
+type IPolyNFTLockProxyTransactorSession struct {
+	Contract     *IPolyNFTLockProxyTransactor // Generic contract transactor binding to set the session for
+	TransactOpts bind.TransactOpts            // Transaction auth options to use throughout this session
 }
 
-// INFTLockProxyRaw is an auto generated low-level Go binding around an Ethereum contract.
-type INFTLockProxyRaw struct {
-	Contract *INFTLockProxy // Generic contract binding to access the raw methods on
+// IPolyNFTLockProxyRaw is an auto generated low-level Go binding around an Ethereum contract.
+type IPolyNFTLockProxyRaw struct {
+	Contract *IPolyNFTLockProxy // Generic contract binding to access the raw methods on
 }
 
-// INFTLockProxyCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
-type INFTLockProxyCallerRaw struct {
-	Contract *INFTLockProxyCaller // Generic read-only contract binding to access the raw methods on
+// IPolyNFTLockProxyCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
+type IPolyNFTLockProxyCallerRaw struct {
+	Contract *IPolyNFTLockProxyCaller // Generic read-only contract binding to access the raw methods on
 }
 
-// INFTLockProxyTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
-type INFTLockProxyTransactorRaw struct {
-	Contract *INFTLockProxyTransactor // Generic write-only contract binding to access the raw methods on
+// IPolyNFTLockProxyTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
+type IPolyNFTLockProxyTransactorRaw struct {
+	Contract *IPolyNFTLockProxyTransactor // Generic write-only contract binding to access the raw methods on
 }
 
-// NewINFTLockProxy creates a new instance of INFTLockProxy, bound to a specific deployed contract.
-func NewINFTLockProxy(address common.Address, backend bind.ContractBackend) (*INFTLockProxy, error) {
-	contract, err := bindINFTLockProxy(address, backend, backend, backend)
+// NewIPolyNFTLockProxy creates a new instance of IPolyNFTLockProxy, bound to a specific deployed contract.
+func NewIPolyNFTLockProxy(address common.Address, backend bind.ContractBackend) (*IPolyNFTLockProxy, error) {
+	contract, err := bindIPolyNFTLockProxy(address, backend, backend, backend)
 	if err != nil {
 		return nil, err
 	}
-	return &INFTLockProxy{INFTLockProxyCaller: INFTLockProxyCaller{contract: contract}, INFTLockProxyTransactor: INFTLockProxyTransactor{contract: contract}, INFTLockProxyFilterer: INFTLockProxyFilterer{contract: contract}}, nil
+	return &IPolyNFTLockProxy{IPolyNFTLockProxyCaller: IPolyNFTLockProxyCaller{contract: contract}, IPolyNFTLockProxyTransactor: IPolyNFTLockProxyTransactor{contract: contract}, IPolyNFTLockProxyFilterer: IPolyNFTLockProxyFilterer{contract: contract}}, nil
 }
 
-// NewINFTLockProxyCaller creates a new read-only instance of INFTLockProxy, bound to a specific deployed contract.
-func NewINFTLockProxyCaller(address common.Address, caller bind.ContractCaller) (*INFTLockProxyCaller, error) {
-	contract, err := bindINFTLockProxy(address, caller, nil, nil)
+// NewIPolyNFTLockProxyCaller creates a new read-only instance of IPolyNFTLockProxy, bound to a specific deployed contract.
+func NewIPolyNFTLockProxyCaller(address common.Address, caller bind.ContractCaller) (*IPolyNFTLockProxyCaller, error) {
+	contract, err := bindIPolyNFTLockProxy(address, caller, nil, nil)
 	if err != nil {
 		return nil, err
 	}
-	return &INFTLockProxyCaller{contract: contract}, nil
+	return &IPolyNFTLockProxyCaller{contract: contract}, nil
 }
 
-// NewINFTLockProxyTransactor creates a new write-only instance of INFTLockProxy, bound to a specific deployed contract.
-func NewINFTLockProxyTransactor(address common.Address, transactor bind.ContractTransactor) (*INFTLockProxyTransactor, error) {
-	contract, err := bindINFTLockProxy(address, nil, transactor, nil)
+// NewIPolyNFTLockProxyTransactor creates a new write-only instance of IPolyNFTLockProxy, bound to a specific deployed contract.
+func NewIPolyNFTLockProxyTransactor(address common.Address, transactor bind.ContractTransactor) (*IPolyNFTLockProxyTransactor, error) {
+	contract, err := bindIPolyNFTLockProxy(address, nil, transactor, nil)
 	if err != nil {
 		return nil, err
 	}
-	return &INFTLockProxyTransactor{contract: contract}, nil
+	return &IPolyNFTLockProxyTransactor{contract: contract}, nil
 }
 
-// NewINFTLockProxyFilterer creates a new log filterer instance of INFTLockProxy, bound to a specific deployed contract.
-func NewINFTLockProxyFilterer(address common.Address, filterer bind.ContractFilterer) (*INFTLockProxyFilterer, error) {
-	contract, err := bindINFTLockProxy(address, nil, nil, filterer)
+// NewIPolyNFTLockProxyFilterer creates a new log filterer instance of IPolyNFTLockProxy, bound to a specific deployed contract.
+func NewIPolyNFTLockProxyFilterer(address common.Address, filterer bind.ContractFilterer) (*IPolyNFTLockProxyFilterer, error) {
+	contract, err := bindIPolyNFTLockProxy(address, nil, nil, filterer)
 	if err != nil {
 		return nil, err
 	}
-	return &INFTLockProxyFilterer{contract: contract}, nil
+	return &IPolyNFTLockProxyFilterer{contract: contract}, nil
 }
 
-// bindINFTLockProxy binds a generic wrapper to an already deployed contract.
-func bindINFTLockProxy(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	parsed, err := abi.JSON(strings.NewReader(INFTLockProxyABI))
+// bindIPolyNFTLockProxy binds a generic wrapper to an already deployed contract.
+func bindIPolyNFTLockProxy(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
+	parsed, err := abi.JSON(strings.NewReader(IPolyNFTLockProxyABI))
 	if err != nil {
 		return nil, err
 	}
@@ -1939,179 +1939,179 @@ func bindINFTLockProxy(address common.Address, caller bind.ContractCaller, trans
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_INFTLockProxy *INFTLockProxyRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
-	return _INFTLockProxy.Contract.INFTLockProxyCaller.contract.Call(opts, result, method, params...)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxyRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
+	return _IPolyNFTLockProxy.Contract.IPolyNFTLockProxyCaller.contract.Call(opts, result, method, params...)
 }
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_INFTLockProxy *INFTLockProxyRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _INFTLockProxy.Contract.INFTLockProxyTransactor.contract.Transfer(opts)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxyRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _IPolyNFTLockProxy.Contract.IPolyNFTLockProxyTransactor.contract.Transfer(opts)
 }
 
 // Transact invokes the (paid) contract method with params as input values.
-func (_INFTLockProxy *INFTLockProxyRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _INFTLockProxy.Contract.INFTLockProxyTransactor.contract.Transact(opts, method, params...)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxyRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _IPolyNFTLockProxy.Contract.IPolyNFTLockProxyTransactor.contract.Transact(opts, method, params...)
 }
 
 // Call invokes the (constant) contract method with params as input values and
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_INFTLockProxy *INFTLockProxyCallerRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
-	return _INFTLockProxy.Contract.contract.Call(opts, result, method, params...)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxyCallerRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
+	return _IPolyNFTLockProxy.Contract.contract.Call(opts, result, method, params...)
 }
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_INFTLockProxy *INFTLockProxyTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _INFTLockProxy.Contract.contract.Transfer(opts)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxyTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _IPolyNFTLockProxy.Contract.contract.Transfer(opts)
 }
 
 // Transact invokes the (paid) contract method with params as input values.
-func (_INFTLockProxy *INFTLockProxyTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _INFTLockProxy.Contract.contract.Transact(opts, method, params...)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxyTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _IPolyNFTLockProxy.Contract.contract.Transact(opts, method, params...)
 }
 
 // AssetHashMap is a free data retrieval call binding the contract method 0x4f7d9808.
 //
 // Solidity: function assetHashMap(address , uint64 ) view returns(bytes)
-func (_INFTLockProxy *INFTLockProxyCaller) AssetHashMap(opts *bind.CallOpts, arg0 common.Address, arg1 uint64) ([]byte, error) {
+func (_IPolyNFTLockProxy *IPolyNFTLockProxyCaller) AssetHashMap(opts *bind.CallOpts, arg0 common.Address, arg1 uint64) ([]byte, error) {
 	var (
 		ret0 = new([]byte)
 	)
 	out := ret0
-	err := _INFTLockProxy.contract.Call(opts, out, "assetHashMap", arg0, arg1)
+	err := _IPolyNFTLockProxy.contract.Call(opts, out, "assetHashMap", arg0, arg1)
 	return *ret0, err
 }
 
 // AssetHashMap is a free data retrieval call binding the contract method 0x4f7d9808.
 //
 // Solidity: function assetHashMap(address , uint64 ) view returns(bytes)
-func (_INFTLockProxy *INFTLockProxySession) AssetHashMap(arg0 common.Address, arg1 uint64) ([]byte, error) {
-	return _INFTLockProxy.Contract.AssetHashMap(&_INFTLockProxy.CallOpts, arg0, arg1)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxySession) AssetHashMap(arg0 common.Address, arg1 uint64) ([]byte, error) {
+	return _IPolyNFTLockProxy.Contract.AssetHashMap(&_IPolyNFTLockProxy.CallOpts, arg0, arg1)
 }
 
 // AssetHashMap is a free data retrieval call binding the contract method 0x4f7d9808.
 //
 // Solidity: function assetHashMap(address , uint64 ) view returns(bytes)
-func (_INFTLockProxy *INFTLockProxyCallerSession) AssetHashMap(arg0 common.Address, arg1 uint64) ([]byte, error) {
-	return _INFTLockProxy.Contract.AssetHashMap(&_INFTLockProxy.CallOpts, arg0, arg1)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxyCallerSession) AssetHashMap(arg0 common.Address, arg1 uint64) ([]byte, error) {
+	return _IPolyNFTLockProxy.Contract.AssetHashMap(&_IPolyNFTLockProxy.CallOpts, arg0, arg1)
 }
 
 // ManagerProxyContract is a free data retrieval call binding the contract method 0xd798f881.
 //
 // Solidity: function managerProxyContract() view returns(address)
-func (_INFTLockProxy *INFTLockProxyCaller) ManagerProxyContract(opts *bind.CallOpts) (common.Address, error) {
+func (_IPolyNFTLockProxy *IPolyNFTLockProxyCaller) ManagerProxyContract(opts *bind.CallOpts) (common.Address, error) {
 	var (
 		ret0 = new(common.Address)
 	)
 	out := ret0
-	err := _INFTLockProxy.contract.Call(opts, out, "managerProxyContract")
+	err := _IPolyNFTLockProxy.contract.Call(opts, out, "managerProxyContract")
 	return *ret0, err
 }
 
 // ManagerProxyContract is a free data retrieval call binding the contract method 0xd798f881.
 //
 // Solidity: function managerProxyContract() view returns(address)
-func (_INFTLockProxy *INFTLockProxySession) ManagerProxyContract() (common.Address, error) {
-	return _INFTLockProxy.Contract.ManagerProxyContract(&_INFTLockProxy.CallOpts)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxySession) ManagerProxyContract() (common.Address, error) {
+	return _IPolyNFTLockProxy.Contract.ManagerProxyContract(&_IPolyNFTLockProxy.CallOpts)
 }
 
 // ManagerProxyContract is a free data retrieval call binding the contract method 0xd798f881.
 //
 // Solidity: function managerProxyContract() view returns(address)
-func (_INFTLockProxy *INFTLockProxyCallerSession) ManagerProxyContract() (common.Address, error) {
-	return _INFTLockProxy.Contract.ManagerProxyContract(&_INFTLockProxy.CallOpts)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxyCallerSession) ManagerProxyContract() (common.Address, error) {
+	return _IPolyNFTLockProxy.Contract.ManagerProxyContract(&_IPolyNFTLockProxy.CallOpts)
 }
 
 // ProxyHashMap is a free data retrieval call binding the contract method 0x9e5767aa.
 //
 // Solidity: function proxyHashMap(uint64 ) view returns(bytes)
-func (_INFTLockProxy *INFTLockProxyCaller) ProxyHashMap(opts *bind.CallOpts, arg0 uint64) ([]byte, error) {
+func (_IPolyNFTLockProxy *IPolyNFTLockProxyCaller) ProxyHashMap(opts *bind.CallOpts, arg0 uint64) ([]byte, error) {
 	var (
 		ret0 = new([]byte)
 	)
 	out := ret0
-	err := _INFTLockProxy.contract.Call(opts, out, "proxyHashMap", arg0)
+	err := _IPolyNFTLockProxy.contract.Call(opts, out, "proxyHashMap", arg0)
 	return *ret0, err
 }
 
 // ProxyHashMap is a free data retrieval call binding the contract method 0x9e5767aa.
 //
 // Solidity: function proxyHashMap(uint64 ) view returns(bytes)
-func (_INFTLockProxy *INFTLockProxySession) ProxyHashMap(arg0 uint64) ([]byte, error) {
-	return _INFTLockProxy.Contract.ProxyHashMap(&_INFTLockProxy.CallOpts, arg0)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxySession) ProxyHashMap(arg0 uint64) ([]byte, error) {
+	return _IPolyNFTLockProxy.Contract.ProxyHashMap(&_IPolyNFTLockProxy.CallOpts, arg0)
 }
 
 // ProxyHashMap is a free data retrieval call binding the contract method 0x9e5767aa.
 //
 // Solidity: function proxyHashMap(uint64 ) view returns(bytes)
-func (_INFTLockProxy *INFTLockProxyCallerSession) ProxyHashMap(arg0 uint64) ([]byte, error) {
-	return _INFTLockProxy.Contract.ProxyHashMap(&_INFTLockProxy.CallOpts, arg0)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxyCallerSession) ProxyHashMap(arg0 uint64) ([]byte, error) {
+	return _IPolyNFTLockProxy.Contract.ProxyHashMap(&_IPolyNFTLockProxy.CallOpts, arg0)
 }
 
 // BindAssetHash is a paid mutator transaction binding the contract method 0x3348f63b.
 //
 // Solidity: function bindAssetHash(address fromAssetHash, uint64 toChainId, bytes toAssetHash) returns(bool)
-func (_INFTLockProxy *INFTLockProxyTransactor) BindAssetHash(opts *bind.TransactOpts, fromAssetHash common.Address, toChainId uint64, toAssetHash []byte) (*types.Transaction, error) {
-	return _INFTLockProxy.contract.Transact(opts, "bindAssetHash", fromAssetHash, toChainId, toAssetHash)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxyTransactor) BindAssetHash(opts *bind.TransactOpts, fromAssetHash common.Address, toChainId uint64, toAssetHash []byte) (*types.Transaction, error) {
+	return _IPolyNFTLockProxy.contract.Transact(opts, "bindAssetHash", fromAssetHash, toChainId, toAssetHash)
 }
 
 // BindAssetHash is a paid mutator transaction binding the contract method 0x3348f63b.
 //
 // Solidity: function bindAssetHash(address fromAssetHash, uint64 toChainId, bytes toAssetHash) returns(bool)
-func (_INFTLockProxy *INFTLockProxySession) BindAssetHash(fromAssetHash common.Address, toChainId uint64, toAssetHash []byte) (*types.Transaction, error) {
-	return _INFTLockProxy.Contract.BindAssetHash(&_INFTLockProxy.TransactOpts, fromAssetHash, toChainId, toAssetHash)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxySession) BindAssetHash(fromAssetHash common.Address, toChainId uint64, toAssetHash []byte) (*types.Transaction, error) {
+	return _IPolyNFTLockProxy.Contract.BindAssetHash(&_IPolyNFTLockProxy.TransactOpts, fromAssetHash, toChainId, toAssetHash)
 }
 
 // BindAssetHash is a paid mutator transaction binding the contract method 0x3348f63b.
 //
 // Solidity: function bindAssetHash(address fromAssetHash, uint64 toChainId, bytes toAssetHash) returns(bool)
-func (_INFTLockProxy *INFTLockProxyTransactorSession) BindAssetHash(fromAssetHash common.Address, toChainId uint64, toAssetHash []byte) (*types.Transaction, error) {
-	return _INFTLockProxy.Contract.BindAssetHash(&_INFTLockProxy.TransactOpts, fromAssetHash, toChainId, toAssetHash)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxyTransactorSession) BindAssetHash(fromAssetHash common.Address, toChainId uint64, toAssetHash []byte) (*types.Transaction, error) {
+	return _IPolyNFTLockProxy.Contract.BindAssetHash(&_IPolyNFTLockProxy.TransactOpts, fromAssetHash, toChainId, toAssetHash)
 }
 
 // BindProxyHash is a paid mutator transaction binding the contract method 0x379b98f6.
 //
 // Solidity: function bindProxyHash(uint64 toChainId, bytes targetProxyHash) returns(bool)
-func (_INFTLockProxy *INFTLockProxyTransactor) BindProxyHash(opts *bind.TransactOpts, toChainId uint64, targetProxyHash []byte) (*types.Transaction, error) {
-	return _INFTLockProxy.contract.Transact(opts, "bindProxyHash", toChainId, targetProxyHash)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxyTransactor) BindProxyHash(opts *bind.TransactOpts, toChainId uint64, targetProxyHash []byte) (*types.Transaction, error) {
+	return _IPolyNFTLockProxy.contract.Transact(opts, "bindProxyHash", toChainId, targetProxyHash)
 }
 
 // BindProxyHash is a paid mutator transaction binding the contract method 0x379b98f6.
 //
 // Solidity: function bindProxyHash(uint64 toChainId, bytes targetProxyHash) returns(bool)
-func (_INFTLockProxy *INFTLockProxySession) BindProxyHash(toChainId uint64, targetProxyHash []byte) (*types.Transaction, error) {
-	return _INFTLockProxy.Contract.BindProxyHash(&_INFTLockProxy.TransactOpts, toChainId, targetProxyHash)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxySession) BindProxyHash(toChainId uint64, targetProxyHash []byte) (*types.Transaction, error) {
+	return _IPolyNFTLockProxy.Contract.BindProxyHash(&_IPolyNFTLockProxy.TransactOpts, toChainId, targetProxyHash)
 }
 
 // BindProxyHash is a paid mutator transaction binding the contract method 0x379b98f6.
 //
 // Solidity: function bindProxyHash(uint64 toChainId, bytes targetProxyHash) returns(bool)
-func (_INFTLockProxy *INFTLockProxyTransactorSession) BindProxyHash(toChainId uint64, targetProxyHash []byte) (*types.Transaction, error) {
-	return _INFTLockProxy.Contract.BindProxyHash(&_INFTLockProxy.TransactOpts, toChainId, targetProxyHash)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxyTransactorSession) BindProxyHash(toChainId uint64, targetProxyHash []byte) (*types.Transaction, error) {
+	return _IPolyNFTLockProxy.Contract.BindProxyHash(&_IPolyNFTLockProxy.TransactOpts, toChainId, targetProxyHash)
 }
 
 // SetManagerProxy is a paid mutator transaction binding the contract method 0xaf9980f0.
 //
 // Solidity: function setManagerProxy(address eccmpAddr) returns()
-func (_INFTLockProxy *INFTLockProxyTransactor) SetManagerProxy(opts *bind.TransactOpts, eccmpAddr common.Address) (*types.Transaction, error) {
-	return _INFTLockProxy.contract.Transact(opts, "setManagerProxy", eccmpAddr)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxyTransactor) SetManagerProxy(opts *bind.TransactOpts, eccmpAddr common.Address) (*types.Transaction, error) {
+	return _IPolyNFTLockProxy.contract.Transact(opts, "setManagerProxy", eccmpAddr)
 }
 
 // SetManagerProxy is a paid mutator transaction binding the contract method 0xaf9980f0.
 //
 // Solidity: function setManagerProxy(address eccmpAddr) returns()
-func (_INFTLockProxy *INFTLockProxySession) SetManagerProxy(eccmpAddr common.Address) (*types.Transaction, error) {
-	return _INFTLockProxy.Contract.SetManagerProxy(&_INFTLockProxy.TransactOpts, eccmpAddr)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxySession) SetManagerProxy(eccmpAddr common.Address) (*types.Transaction, error) {
+	return _IPolyNFTLockProxy.Contract.SetManagerProxy(&_IPolyNFTLockProxy.TransactOpts, eccmpAddr)
 }
 
 // SetManagerProxy is a paid mutator transaction binding the contract method 0xaf9980f0.
 //
 // Solidity: function setManagerProxy(address eccmpAddr) returns()
-func (_INFTLockProxy *INFTLockProxyTransactorSession) SetManagerProxy(eccmpAddr common.Address) (*types.Transaction, error) {
-	return _INFTLockProxy.Contract.SetManagerProxy(&_INFTLockProxy.TransactOpts, eccmpAddr)
+func (_IPolyNFTLockProxy *IPolyNFTLockProxyTransactorSession) SetManagerProxy(eccmpAddr common.Address) (*types.Transaction, error) {
+	return _IPolyNFTLockProxy.Contract.SetManagerProxy(&_IPolyNFTLockProxy.TransactOpts, eccmpAddr)
 }
 
 // OwnableABI is the input ABI used to generate the binding from.
@@ -2956,7 +2956,7 @@ func (_Pausable *PausableFilterer) ParseUnpaused(log types.Log) (*PausableUnpaus
 }
 
 // PolyNFTWrapperABI is the input ABI used to generate the binding from.
-const PolyNFTWrapperABI = "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_chainId\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"fromAsset\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"toChainId\",\"type\":\"uint64\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"toAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"PolyWrapperLock\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"feeToken\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"bytes\",\"name\":\"txHash\",\"type\":\"bytes\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"efee\",\"type\":\"uint256\"}],\"name\":\"PolyWrapperSpeedUp\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"chainId\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"extractFee\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"feeCollector\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"fromAsset\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"toChainId\",\"type\":\"uint64\"},{\"internalType\":\"address\",\"name\":\"toAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"feeToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"lock\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"}],\"name\":\"setFeeCollector\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_lockProxy\",\"type\":\"address\"}],\"name\":\"setLockProxy\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"feeToken\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"txHash\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"}],\"name\":\"speedUp\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"unpause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]"
+const PolyNFTWrapperABI = "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_chainId\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"fromAsset\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"toChainId\",\"type\":\"uint64\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"toAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"PolyWrapperLock\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"feeToken\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"bytes\",\"name\":\"txHash\",\"type\":\"bytes\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"efee\",\"type\":\"uint256\"}],\"name\":\"PolyWrapperSpeedUp\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"chainId\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"extractFee\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"feeCollector\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"fromAsset\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"toChainId\",\"type\":\"uint64\"},{\"internalType\":\"address\",\"name\":\"toAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"feeToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"lock\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lockProxy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"}],\"name\":\"setFeeCollector\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_lockProxy\",\"type\":\"address\"}],\"name\":\"setLockProxy\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"feeToken\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"txHash\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"}],\"name\":\"speedUp\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"unpause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]"
 
 // PolyNFTWrapperFuncSigs maps the 4-byte function signature to its string representation.
 var PolyNFTWrapperFuncSigs = map[string]string{
@@ -2965,6 +2965,7 @@ var PolyNFTWrapperFuncSigs = map[string]string{
 	"c415b95c": "feeCollector()",
 	"8f32d59b": "isOwner()",
 	"0985b87f": "lock(address,uint64,address,uint256,address,uint256,uint256)",
+	"9d4dc021": "lockProxy()",
 	"8da5cb5b": "owner()",
 	"8456cb59": "pause()",
 	"5c975abb": "paused()",
@@ -2977,7 +2978,7 @@ var PolyNFTWrapperFuncSigs = map[string]string{
 }
 
 // PolyNFTWrapperBin is the compiled bytecode used for deploying new contracts.
-var PolyNFTWrapperBin = "0x60806040523480156200001157600080fd5b50604051620018b4380380620018b4833981810160405260408110156200003757600080fd5b50805160209091015160006200004c620000e7565b600080546001600160a01b0319166001600160a01b03831690811782556040519293509160008051602062001894833981519152908290a3506000805460ff60a01b191690556001805580620000d2576040805162461bcd60e51b8152602060048201526006602482015265085b1959d85b60d21b604482015290519081900360640190fd5b620000dd82620000eb565b600255506200020c565b3390565b620000f562000155565b62000147576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b62000152816200017b565b50565b600080546001600160a01b03166200016c620000e7565b6001600160a01b031614905090565b6001600160a01b038116620001c25760405162461bcd60e51b81526004018080602001828103825260268152602001806200186e6026913960400191505060405180910390fd5b600080546040516001600160a01b03808516939216916000805160206200189483398151915291a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b611652806200021c6000396000f3fe6080604052600436106100dd5760003560e01c80638da5cb5b1161007f578063a42dce8011610059578063a42dce8014610277578063c415b95c146102aa578063d3ed7c76146102bf578063f2fde38b14610377576100dd565b80638da5cb5b1461020a5780638f32d59b1461023b5780639a8a059214610250576100dd565b80635c975abb116100bb5780635c975abb146101845780636f2b6ee6146101ad578063715018a6146101e05780638456cb59146101f5576100dd565b80630985b87f146100e25780631745399d1461013c5780633f4ba83a1461016f575b600080fd5b61013a600480360360e08110156100f857600080fd5b506001600160a01b03813581169167ffffffffffffffff6020820135169160408201358116916060810135916080820135169060a08101359060c001356103aa565b005b34801561014857600080fd5b5061013a6004803603602081101561015f57600080fd5b50356001600160a01b0316610546565b34801561017b57600080fd5b5061013a610668565b34801561019057600080fd5b506101996106b9565b604080519115158252519081900360200190f35b3480156101b957600080fd5b5061013a600480360360208110156101d057600080fd5b50356001600160a01b03166106c9565b3480156101ec57600080fd5b5061013a6107f7565b34801561020157600080fd5b5061013a610888565b34801561021657600080fd5b5061021f6108d7565b604080516001600160a01b039092168252519081900360200190f35b34801561024757600080fd5b506101996108e6565b34801561025c57600080fd5b5061026561090a565b60408051918252519081900360200190f35b34801561028357600080fd5b5061013a6004803603602081101561029a57600080fd5b50356001600160a01b0316610910565b3480156102b657600080fd5b5061021f6109c4565b61013a600480360360608110156102d557600080fd5b6001600160a01b03823516919081019060408101602082013564010000000081111561030057600080fd5b82018360208201111561031257600080fd5b8035906020019184600183028401116401000000008311171561033457600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092955050913592506109d3915050565b34801561038357600080fd5b5061013a6004803603602081101561039a57600080fd5b50356001600160a01b0316610b34565b60018054810190819055600054600160a01b900460ff1615610406576040805162461bcd60e51b815260206004820152601060248201526f14185d5cd8589b194e881c185d5cd95960821b604482015290519081900360640190fd5b6002548767ffffffffffffffff161415801561042b575067ffffffffffffffff871615155b610469576040805162461bcd60e51b815260206004820152600a602482015269085d1bd0da185a5b925960b21b604482015290519081900360640190fd5b6104738484610b84565b61047f88888888610bf9565b6040805167ffffffffffffffff891681526001600160a01b0388811660208301528183018890526060820186905260808201859052915133928b16917f963387b64585eb8f865c1fa7e403c80cae0a98aa6e74cd8ebe92536e97886ed9919081900360a00190a3600154811461053c576040805162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c00604482015290519081900360640190fd5b5050505050505050565b6003546001600160a01b03163314610595576040805162461bcd60e51b815260206004820152600d60248201526c10b332b2a1b7b63632b1ba37b960991b604482015290519081900360640190fd5b6001600160a01b0381166105d55760405133904780156108fc02916000818181858888f193505050501580156105cf573d6000803e3d6000fd5b50610665565b600354604080516370a0823160e01b81523060048201529051610665926001600160a01b0390811692908516916370a0823191602480820192602092909190829003018186803b15801561062857600080fd5b505afa15801561063c573d6000803e3d6000fd5b505050506040513d602081101561065257600080fd5b50516001600160a01b0384169190610d42565b50565b6106706108e6565b6106af576040805162461bcd60e51b815260206004820181905260248201526000805160206115d3833981519152604482015290519081900360640190fd5b6106b7610d99565b565b600054600160a01b900460ff1690565b6106d16108e6565b610710576040805162461bcd60e51b815260206004820181905260248201526000805160206115d3833981519152604482015290519081900360640190fd5b6001600160a01b03811661072357600080fd5b600480546001600160a01b0319166001600160a01b03838116919091178083556040805163d798f88160e01b81529051600094929093169263d798f88192828101926020929190829003018186803b15801561077e57600080fd5b505afa158015610792573d6000803e3d6000fd5b505050506040513d60208110156107a857600080fd5b50516001600160a01b03161415610665576040805162461bcd60e51b815260206004820152600e60248201526d6e6f74206c6f636b2070726f787960901b604482015290519081900360640190fd5b6107ff6108e6565b61083e576040805162461bcd60e51b815260206004820181905260248201526000805160206115d3833981519152604482015290519081900360640190fd5b600080546040516001600160a01b03909116907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908390a3600080546001600160a01b0319169055565b6108906108e6565b6108cf576040805162461bcd60e51b815260206004820181905260248201526000805160206115d3833981519152604482015290519081900360640190fd5b6106b7610e41565b6000546001600160a01b031690565b600080546001600160a01b03166108fb610ecb565b6001600160a01b031614905090565b60025481565b6109186108e6565b610957576040805162461bcd60e51b815260206004820181905260248201526000805160206115d3833981519152604482015290519081900360640190fd5b6001600160a01b0381166109a2576040805162461bcd60e51b815260206004820152600d60248201526c656d747079206164647265737360981b604482015290519081900360640190fd5b600380546001600160a01b0319166001600160a01b0392909216919091179055565b6003546001600160a01b031681565b60018054810190819055600054600160a01b900460ff1615610a2f576040805162461bcd60e51b815260206004820152601060248201526f14185d5cd8589b194e881c185d5cd95960821b604482015290519081900360640190fd5b610a398483610b84565b336001600160a01b0316836040518082805190602001908083835b60208310610a735780518252601f199092019160209182019101610a54565b51815160209384036101000a60001901801990921691161790526040805192909401829003822089835293519395506001600160a01b038b1694507ff6579aef3e0d086d986c5d6972659f8a0d8602ef7945b054be1b88e088773ef69391829003019150a46001548114610b2e576040805162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c00604482015290519081900360640190fd5b50505050565b610b3c6108e6565b610b7b576040805162461bcd60e51b815260206004820181905260248201526000805160206115d3833981519152604482015290519081900360640190fd5b61066581610ecf565b6001600160a01b038216610be057803414610bdb576040805162461bcd60e51b815260206004820152601260248201527134b739bab33334b1b4b2b73a1032ba3432b960711b604482015290519081900360640190fd5b610bf5565b610bf56001600160a01b038316333084610f6f565b5050565b610c01611594565b50604080518082018252606084811b6bffffffffffffffffffffffff191681830152825180830360540181526074830190935291815267ffffffffffffffff8516602082015290610c5182610fc9565b60048054604051635c46a7ef60e11b8152339281018381526001600160a01b039283166024830181905260448301899052608060648401908152865160848501528651969750938c169563b88d4fde959491938a9389939092909160a40190602085019080838360005b83811015610cd3578181015183820152602001610cbb565b50505050905090810190601f168015610d005780820380516001836020036101000a031916815260200191505b5095505050505050600060405180830381600087803b158015610d2257600080fd5b505af1158015610d36573d6000803e3d6000fd5b50505050505050505050565b604080516001600160a01b038416602482015260448082018490528251808303909101815260649091019091526020810180516001600160e01b031663a9059cbb60e01b179052610d949084906110a1565b505050565b600054600160a01b900460ff16610dee576040805162461bcd60e51b815260206004820152601460248201527314185d5cd8589b194e881b9bdd081c185d5cd95960621b604482015290519081900360640190fd5b6000805460ff60a01b191690557f5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa610e24610ecb565b604080516001600160a01b039092168252519081900360200190a1565b600054600160a01b900460ff1615610e93576040805162461bcd60e51b815260206004820152601060248201526f14185d5cd8589b194e881c185d5cd95960821b604482015290519081900360640190fd5b6000805460ff60a01b1916600160a01b1790557f62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a258610e245b3390565b6001600160a01b038116610f145760405162461bcd60e51b81526004018080602001828103825260268152602001806115ad6026913960400191505060405180910390fd5b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b604080516001600160a01b0380861660248301528416604482015260648082018490528251808303909101815260849091019091526020810180516001600160e01b03166323b872dd60e01b179052610b2e9085906110a1565b606080610fd98360000151611250565b610fe68460200151611316565b6040516020018083805190602001908083835b602083106110185780518252601f199092019160209182019101610ff9565b51815160209384036101000a600019018019909216911617905285519190930192850191508083835b602083106110605780518252601f199092019160209182019101611041565b6001836020036101000a038019825116818451168082178552505050505050905001925050506040516020818303038152906040529050809150505b919050565b6110aa82611359565b6110fb576040805162461bcd60e51b815260206004820152601f60248201527f5361666545524332303a2063616c6c20746f206e6f6e2d636f6e747261637400604482015290519081900360640190fd5b60006060836001600160a01b0316836040518082805190602001908083835b602083106111395780518252601f19909201916020918201910161111a565b6001836020036101000a0380198251168184511680821785525050505050509050019150506000604051808303816000865af19150503d806000811461119b576040519150601f19603f3d011682016040523d82523d6000602084013e6111a0565b606091505b5091509150816111f7576040805162461bcd60e51b815260206004820181905260248201527f5361666545524332303a206c6f772d6c6576656c2063616c6c206661696c6564604482015290519081900360640190fd5b805115610b2e5780806020019051602081101561121357600080fd5b5051610b2e5760405162461bcd60e51b815260040180806020018281038252602a8152602001806115f3602a913960400191505060405180910390fd5b805160609061125e81611395565b836040516020018083805190602001908083835b602083106112915780518252601f199092019160209182019101611272565b51815160209384036101000a600019018019909216911617905285519190930192850191508083835b602083106112d95780518252601f1990920191602091820191016112ba565b6001836020036101000a03801982511681845116808217855250505050505090500192505050604051602081830303815290604052915050919050565b6040516008808252606091906000601f5b828210156113495785811a826020860101536001919091019060001901611327565b5050506028810160405292915050565b6000813f7fc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470811580159061138d5750808214155b949350505050565b606060fd8267ffffffffffffffff1610156113ba576113b3826114de565b905061109c565b61ffff8267ffffffffffffffff1611611499576113da60fd60f81b6114fa565b6113e38361150e565b6040516020018083805190602001908083835b602083106114155780518252601f1990920191602091820191016113f6565b51815160209384036101000a600019018019909216911617905285519190930192850191508083835b6020831061145d5780518252601f19909201916020918201910161143e565b6001836020036101000a03801982511681845116808217855250505050505090500192505050604051602081830303815290604052905061109c565b63ffffffff8267ffffffffffffffff16116114c4576114bb607f60f91b6114fa565b6113e383611551565b6114d56001600160f81b03196114fa565b6113e383611316565b604080516001815260f89290921b602083015260218201905290565b60606115088260f81c6114de565b92915050565b6040516002808252606091906000601f5b828210156115415785811a82602086010153600191909101906000190161151f565b5050506022810160405292915050565b6040516004808252606091906000601f5b828210156115845785811a826020860101536001919091019060001901611562565b5050506024810160405292915050565b6040805180820190915260608152600060208201529056fe4f776e61626c653a206e6577206f776e657220697320746865207a65726f20616464726573734f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65725361666545524332303a204552433230206f7065726174696f6e20646964206e6f742073756363656564a26469706673582212203998c91547d6e6a4f23c5367a6d210d94347924763c097eac1c3bc279b0f6a9764736f6c634300060c00334f776e61626c653a206e6577206f776e657220697320746865207a65726f20616464726573738be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+var PolyNFTWrapperBin = "0x60806040523480156200001157600080fd5b50604051620018e3380380620018e3833981810160405260408110156200003757600080fd5b50805160209091015160006200004c620000e7565b600080546001600160a01b0319166001600160a01b038316908117825560405192935091600080516020620018c3833981519152908290a3506000805460ff60a01b191690556001805580620000d2576040805162461bcd60e51b8152602060048201526006602482015265085b1959d85b60d21b604482015290519081900360640190fd5b620000dd82620000eb565b600255506200020c565b3390565b620000f562000155565b62000147576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b62000152816200017b565b50565b600080546001600160a01b03166200016c620000e7565b6001600160a01b031614905090565b6001600160a01b038116620001c25760405162461bcd60e51b81526004018080602001828103825260268152602001806200189d6026913960400191505060405180910390fd5b600080546040516001600160a01b0380851693921691600080516020620018c383398151915291a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b611681806200021c6000396000f3fe6080604052600436106100e85760003560e01c80638da5cb5b1161008a578063a42dce8011610059578063a42dce8014610297578063c415b95c146102ca578063d3ed7c76146102df578063f2fde38b14610397576100e8565b80638da5cb5b146102155780638f32d59b146102465780639a8a05921461025b5780639d4dc02114610282576100e8565b80635c975abb116100c65780635c975abb1461018f5780636f2b6ee6146101b8578063715018a6146101eb5780638456cb5914610200576100e8565b80630985b87f146100ed5780631745399d146101475780633f4ba83a1461017a575b600080fd5b610145600480360360e081101561010357600080fd5b506001600160a01b03813581169167ffffffffffffffff6020820135169160408201358116916060810135916080820135169060a08101359060c001356103ca565b005b34801561015357600080fd5b506101456004803603602081101561016a57600080fd5b50356001600160a01b0316610566565b34801561018657600080fd5b50610145610688565b34801561019b57600080fd5b506101a46106d9565b604080519115158252519081900360200190f35b3480156101c457600080fd5b50610145600480360360208110156101db57600080fd5b50356001600160a01b03166106e9565b3480156101f757600080fd5b50610145610817565b34801561020c57600080fd5b506101456108a8565b34801561022157600080fd5b5061022a6108f7565b604080516001600160a01b039092168252519081900360200190f35b34801561025257600080fd5b506101a4610906565b34801561026757600080fd5b5061027061092a565b60408051918252519081900360200190f35b34801561028e57600080fd5b5061022a610930565b3480156102a357600080fd5b50610145600480360360208110156102ba57600080fd5b50356001600160a01b031661093f565b3480156102d657600080fd5b5061022a6109f3565b610145600480360360608110156102f557600080fd5b6001600160a01b03823516919081019060408101602082013564010000000081111561032057600080fd5b82018360208201111561033257600080fd5b8035906020019184600183028401116401000000008311171561035457600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295505091359250610a02915050565b3480156103a357600080fd5b50610145600480360360208110156103ba57600080fd5b50356001600160a01b0316610b63565b60018054810190819055600054600160a01b900460ff1615610426576040805162461bcd60e51b815260206004820152601060248201526f14185d5cd8589b194e881c185d5cd95960821b604482015290519081900360640190fd5b6002548767ffffffffffffffff161415801561044b575067ffffffffffffffff871615155b610489576040805162461bcd60e51b815260206004820152600a602482015269085d1bd0da185a5b925960b21b604482015290519081900360640190fd5b6104938484610bb3565b61049f88888888610c28565b6040805167ffffffffffffffff891681526001600160a01b0388811660208301528183018890526060820186905260808201859052915133928b16917f963387b64585eb8f865c1fa7e403c80cae0a98aa6e74cd8ebe92536e97886ed9919081900360a00190a3600154811461055c576040805162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c00604482015290519081900360640190fd5b5050505050505050565b6003546001600160a01b031633146105b5576040805162461bcd60e51b815260206004820152600d60248201526c10b332b2a1b7b63632b1ba37b960991b604482015290519081900360640190fd5b6001600160a01b0381166105f55760405133904780156108fc02916000818181858888f193505050501580156105ef573d6000803e3d6000fd5b50610685565b600354604080516370a0823160e01b81523060048201529051610685926001600160a01b0390811692908516916370a0823191602480820192602092909190829003018186803b15801561064857600080fd5b505afa15801561065c573d6000803e3d6000fd5b505050506040513d602081101561067257600080fd5b50516001600160a01b0384169190610d71565b50565b610690610906565b6106cf576040805162461bcd60e51b81526020600482018190526024820152600080516020611602833981519152604482015290519081900360640190fd5b6106d7610dc8565b565b600054600160a01b900460ff1690565b6106f1610906565b610730576040805162461bcd60e51b81526020600482018190526024820152600080516020611602833981519152604482015290519081900360640190fd5b6001600160a01b03811661074357600080fd5b600480546001600160a01b0319166001600160a01b03838116919091178083556040805163d798f88160e01b81529051600094929093169263d798f88192828101926020929190829003018186803b15801561079e57600080fd5b505afa1580156107b2573d6000803e3d6000fd5b505050506040513d60208110156107c857600080fd5b50516001600160a01b03161415610685576040805162461bcd60e51b815260206004820152600e60248201526d6e6f74206c6f636b2070726f787960901b604482015290519081900360640190fd5b61081f610906565b61085e576040805162461bcd60e51b81526020600482018190526024820152600080516020611602833981519152604482015290519081900360640190fd5b600080546040516001600160a01b03909116907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908390a3600080546001600160a01b0319169055565b6108b0610906565b6108ef576040805162461bcd60e51b81526020600482018190526024820152600080516020611602833981519152604482015290519081900360640190fd5b6106d7610e70565b6000546001600160a01b031690565b600080546001600160a01b031661091b610efa565b6001600160a01b031614905090565b60025481565b6004546001600160a01b031681565b610947610906565b610986576040805162461bcd60e51b81526020600482018190526024820152600080516020611602833981519152604482015290519081900360640190fd5b6001600160a01b0381166109d1576040805162461bcd60e51b815260206004820152600d60248201526c656d747079206164647265737360981b604482015290519081900360640190fd5b600380546001600160a01b0319166001600160a01b0392909216919091179055565b6003546001600160a01b031681565b60018054810190819055600054600160a01b900460ff1615610a5e576040805162461bcd60e51b815260206004820152601060248201526f14185d5cd8589b194e881c185d5cd95960821b604482015290519081900360640190fd5b610a688483610bb3565b336001600160a01b0316836040518082805190602001908083835b60208310610aa25780518252601f199092019160209182019101610a83565b51815160209384036101000a60001901801990921691161790526040805192909401829003822089835293519395506001600160a01b038b1694507ff6579aef3e0d086d986c5d6972659f8a0d8602ef7945b054be1b88e088773ef69391829003019150a46001548114610b5d576040805162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c00604482015290519081900360640190fd5b50505050565b610b6b610906565b610baa576040805162461bcd60e51b81526020600482018190526024820152600080516020611602833981519152604482015290519081900360640190fd5b61068581610efe565b6001600160a01b038216610c0f57803414610c0a576040805162461bcd60e51b815260206004820152601260248201527134b739bab33334b1b4b2b73a1032ba3432b960711b604482015290519081900360640190fd5b610c24565b610c246001600160a01b038316333084610f9e565b5050565b610c306115c3565b50604080518082018252606084811b6bffffffffffffffffffffffff191681830152825180830360540181526074830190935291815267ffffffffffffffff8516602082015290610c8082610ff8565b60048054604051635c46a7ef60e11b8152339281018381526001600160a01b039283166024830181905260448301899052608060648401908152865160848501528651969750938c169563b88d4fde959491938a9389939092909160a40190602085019080838360005b83811015610d02578181015183820152602001610cea565b50505050905090810190601f168015610d2f5780820380516001836020036101000a031916815260200191505b5095505050505050600060405180830381600087803b158015610d5157600080fd5b505af1158015610d65573d6000803e3d6000fd5b50505050505050505050565b604080516001600160a01b038416602482015260448082018490528251808303909101815260649091019091526020810180516001600160e01b031663a9059cbb60e01b179052610dc39084906110d0565b505050565b600054600160a01b900460ff16610e1d576040805162461bcd60e51b815260206004820152601460248201527314185d5cd8589b194e881b9bdd081c185d5cd95960621b604482015290519081900360640190fd5b6000805460ff60a01b191690557f5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa610e53610efa565b604080516001600160a01b039092168252519081900360200190a1565b600054600160a01b900460ff1615610ec2576040805162461bcd60e51b815260206004820152601060248201526f14185d5cd8589b194e881c185d5cd95960821b604482015290519081900360640190fd5b6000805460ff60a01b1916600160a01b1790557f62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a258610e535b3390565b6001600160a01b038116610f435760405162461bcd60e51b81526004018080602001828103825260268152602001806115dc6026913960400191505060405180910390fd5b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b604080516001600160a01b0380861660248301528416604482015260648082018490528251808303909101815260849091019091526020810180516001600160e01b03166323b872dd60e01b179052610b5d9085906110d0565b606080611008836000015161127f565b6110158460200151611345565b6040516020018083805190602001908083835b602083106110475780518252601f199092019160209182019101611028565b51815160209384036101000a600019018019909216911617905285519190930192850191508083835b6020831061108f5780518252601f199092019160209182019101611070565b6001836020036101000a038019825116818451168082178552505050505050905001925050506040516020818303038152906040529050809150505b919050565b6110d982611388565b61112a576040805162461bcd60e51b815260206004820152601f60248201527f5361666545524332303a2063616c6c20746f206e6f6e2d636f6e747261637400604482015290519081900360640190fd5b60006060836001600160a01b0316836040518082805190602001908083835b602083106111685780518252601f199092019160209182019101611149565b6001836020036101000a0380198251168184511680821785525050505050509050019150506000604051808303816000865af19150503d80600081146111ca576040519150601f19603f3d011682016040523d82523d6000602084013e6111cf565b606091505b509150915081611226576040805162461bcd60e51b815260206004820181905260248201527f5361666545524332303a206c6f772d6c6576656c2063616c6c206661696c6564604482015290519081900360640190fd5b805115610b5d5780806020019051602081101561124257600080fd5b5051610b5d5760405162461bcd60e51b815260040180806020018281038252602a815260200180611622602a913960400191505060405180910390fd5b805160609061128d816113c4565b836040516020018083805190602001908083835b602083106112c05780518252601f1990920191602091820191016112a1565b51815160209384036101000a600019018019909216911617905285519190930192850191508083835b602083106113085780518252601f1990920191602091820191016112e9565b6001836020036101000a03801982511681845116808217855250505050505090500192505050604051602081830303815290604052915050919050565b6040516008808252606091906000601f5b828210156113785785811a826020860101536001919091019060001901611356565b5050506028810160405292915050565b6000813f7fc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a47081158015906113bc5750808214155b949350505050565b606060fd8267ffffffffffffffff1610156113e9576113e28261150d565b90506110cb565b61ffff8267ffffffffffffffff16116114c85761140960fd60f81b611529565b6114128361153d565b6040516020018083805190602001908083835b602083106114445780518252601f199092019160209182019101611425565b51815160209384036101000a600019018019909216911617905285519190930192850191508083835b6020831061148c5780518252601f19909201916020918201910161146d565b6001836020036101000a0380198251168184511680821785525050505050509050019250505060405160208183030381529060405290506110cb565b63ffffffff8267ffffffffffffffff16116114f3576114ea607f60f91b611529565b61141283611580565b6115046001600160f81b0319611529565b61141283611345565b604080516001815260f89290921b602083015260218201905290565b60606115378260f81c61150d565b92915050565b6040516002808252606091906000601f5b828210156115705785811a82602086010153600191909101906000190161154e565b5050506022810160405292915050565b6040516004808252606091906000601f5b828210156115b35785811a826020860101536001919091019060001901611591565b5050506024810160405292915050565b6040805180820190915260608152600060208201529056fe4f776e61626c653a206e6577206f776e657220697320746865207a65726f20616464726573734f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65725361666545524332303a204552433230206f7065726174696f6e20646964206e6f742073756363656564a264697066735822122090718751d2dae9d76bedb80525cd3b4f9642dfbc206ba2cc529ef284cce5b22f64736f6c634300060c00334f776e61626c653a206e6577206f776e657220697320746865207a65726f20616464726573738be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
 
 // DeployPolyNFTWrapper deploys a new Ethereum contract, binding an instance of PolyNFTWrapper to it.
 func DeployPolyNFTWrapper(auth *bind.TransactOpts, backend bind.ContractBackend, _owner common.Address, _chainId *big.Int) (common.Address, *types.Transaction, *PolyNFTWrapper, error) {
@@ -3211,6 +3212,32 @@ func (_PolyNFTWrapper *PolyNFTWrapperSession) IsOwner() (bool, error) {
 // Solidity: function isOwner() view returns(bool)
 func (_PolyNFTWrapper *PolyNFTWrapperCallerSession) IsOwner() (bool, error) {
 	return _PolyNFTWrapper.Contract.IsOwner(&_PolyNFTWrapper.CallOpts)
+}
+
+// LockProxy is a free data retrieval call binding the contract method 0x9d4dc021.
+//
+// Solidity: function lockProxy() view returns(address)
+func (_PolyNFTWrapper *PolyNFTWrapperCaller) LockProxy(opts *bind.CallOpts) (common.Address, error) {
+	var (
+		ret0 = new(common.Address)
+	)
+	out := ret0
+	err := _PolyNFTWrapper.contract.Call(opts, out, "lockProxy")
+	return *ret0, err
+}
+
+// LockProxy is a free data retrieval call binding the contract method 0x9d4dc021.
+//
+// Solidity: function lockProxy() view returns(address)
+func (_PolyNFTWrapper *PolyNFTWrapperSession) LockProxy() (common.Address, error) {
+	return _PolyNFTWrapper.Contract.LockProxy(&_PolyNFTWrapper.CallOpts)
+}
+
+// LockProxy is a free data retrieval call binding the contract method 0x9d4dc021.
+//
+// Solidity: function lockProxy() view returns(address)
+func (_PolyNFTWrapper *PolyNFTWrapperCallerSession) LockProxy() (common.Address, error) {
+	return _PolyNFTWrapper.Contract.LockProxy(&_PolyNFTWrapper.CallOpts)
 }
 
 // Owner is a free data retrieval call binding the contract method 0x8da5cb5b.

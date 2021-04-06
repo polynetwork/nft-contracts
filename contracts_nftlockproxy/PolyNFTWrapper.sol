@@ -9,7 +9,7 @@ import "./libs/lifecycle/Pausable.sol";
 import "./libs/common/ZeroCopySink.sol";
 import "./libs/token/ERC721/IERC721.sol";
 import "./libs/utils/ReentrancyGuard.sol";
-import "./interface/INFTLockProxy.sol";
+import "./interface/IPolyNFTLockProxy.sol";
 
 contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
     using SafeMath for uint;
@@ -17,7 +17,7 @@ contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
 
     uint public chainId;
     address public feeCollector;
-    address private lockProxy;
+    address public lockProxy;
     
     struct CallArgs {
         bytes toAddress;
@@ -41,7 +41,7 @@ contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
     function setLockProxy(address _lockProxy) external onlyOwner {
         require(_lockProxy != address(0));
         lockProxy = _lockProxy;
-        require(INFTLockProxy(lockProxy).managerProxyContract() != address(0), "not lock proxy");
+        require(IPolyNFTLockProxy(lockProxy).managerProxyContract() != address(0), "not lock proxy");
     }
 
     function pause() external onlyOwner {
