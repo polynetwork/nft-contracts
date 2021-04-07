@@ -24,7 +24,7 @@ contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
         uint64 toChainId;
     }
 
-    event PolyWrapperLock(address indexed fromAsset, address indexed sender, uint64 toChainId, address toAddress, uint256 tokenId, uint256 fee, uint id);
+    event PolyWrapperLock(address indexed fromAsset, address indexed sender, uint64 toChainId, address toAddress, uint256 tokenId, address feeToken, uint256 fee, uint id);
     event PolyWrapperSpeedUp(address indexed feeToken, bytes indexed txHash, address indexed sender, uint256 efee);
 
     constructor(address _owner, uint _chainId) public {
@@ -66,7 +66,7 @@ contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
 
         _pull(feeToken, fee);
         _push(fromAsset, toChainId, toAddress, tokenId);
-        emit PolyWrapperLock(fromAsset, msg.sender, toChainId, toAddress, tokenId, fee, id);
+        emit PolyWrapperLock(fromAsset, msg.sender, toChainId, toAddress, tokenId, feeToken, fee, id);
     }
 
     function speedUp(address feeToken, bytes memory txHash, uint256 fee) external payable nonReentrant whenNotPaused {
