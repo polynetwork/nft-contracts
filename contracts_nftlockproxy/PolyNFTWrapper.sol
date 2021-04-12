@@ -66,7 +66,7 @@ contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
 
     function getAndCheckTokenUrl(address asset, address user, uint tokenId) public view returns (string memory) {
         address owner = IERC721(asset).ownerOf(tokenId);
-        require(user == owner, "user is not token's owner");
+        require(address(user) == address(owner), "user is not token's owner");
 
         string memory url = IERC721Metadata(asset).tokenURI(tokenId);
         return url;
@@ -74,12 +74,12 @@ contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
 
     // getTokensByIndex index start from 0
     function getTokensByIds(address asset, bytes calldata args) public view returns (bytes memory) {
-        uint256 off = 0;
-        uint256 tokenId = 0;
-        uint8 length = 0;
+        uint off = 0;
+        uint tokenId = 0;
+        uint length = 0;
         bytes memory buff;
 
-        (length, off) = ZeroCopySource.NextUint8(args, off);
+        (length, off) = ZeroCopySource.NextUint256(args, off);
         require(length > 0 && length <= 10, "length out of range");
 
         IERC721Metadata meta = IERC721Metadata(asset);
