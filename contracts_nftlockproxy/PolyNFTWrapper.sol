@@ -7,6 +7,7 @@ import "./libs/token/ERC20/SafeERC20.sol";
 import "./libs/math/SafeMath.sol";
 import "./libs/lifecycle/Pausable.sol";
 import "./libs/common/ZeroCopySink.sol";
+import "./libs/common/ZeroCopySource.sol";
 import "./libs/token/ERC721/IERC721.sol";
 import "./libs/token/ERC721/IERC721Enumerable.sol";
 import "./libs/token/ERC721/IERC721Metadata.sol";
@@ -61,6 +62,38 @@ contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
         } else {
             IERC20(token).safeTransfer(feeCollector, IERC20(token).balanceOf(address(this)));
         }
+    }
+
+    function getAndCheckTokenUrl(address asset, address user, uint tokenId) public view returns (string memory) {
+        address owner = IERC721(asset).ownerOf(tokenId);
+        require(user == owner, "user is not token's owner");
+
+        string memory url = IERC721Metadata(asset).tokenURI(tokenId);
+        return url;
+    }
+
+    // getTokensByIndex index start from 0
+    function getTokensByIds(address asset, bytes calldata args) public view returns (bytes memory) {
+        uint256 off = 0;
+        uint256 tokenId = 0;
+        uint8 length = 0;
+        bytes memory buff;
+
+        (length, off) = ZeroCopySource.NextUint8(args, off);
+        require(length > 0 && length <= 10, "length out of range");
+
+        IERC721Metadata meta = IERC721Metadata(asset);
+        for (uint index = 0; index < length; index++) {
+            (tokenId, off) = ZeroCopySource.NextUint256(args, off);
+            string memory url = meta.tokenURI(tokenId);
+            buff = abi.encodePacked(
+                buff,
+                ZeroCopySink.WriteUint256(tokenId),
+                ZeroCopySink.WriteVarBytes(bytes(url))
+            );
+        }
+        
+        return buff;
     }
 
     // getTokensByIndex index start from 0
