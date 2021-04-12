@@ -8,6 +8,8 @@ import "./libs/math/SafeMath.sol";
 import "./libs/lifecycle/Pausable.sol";
 import "./libs/common/ZeroCopySink.sol";
 import "./libs/token/ERC721/IERC721.sol";
+import "./libs/token/ERC721/IERC721Enumerable.sol";
+import "./libs/token/ERC721/IERC721Metadata.sol";
 import "./libs/utils/ReentrancyGuard.sol";
 import "./interface/IPolyNFTLockProxy.sol";
 
@@ -59,6 +61,33 @@ contract PolyNFTWrapper is Ownable, Pausable, ReentrancyGuard {
         } else {
             IERC20(token).safeTransfer(feeCollector, IERC20(token).balanceOf(address(this)));
         }
+    }
+
+    // getTokensByIndex index start from 0
+    function getTokensByIndex(address asset, address owner, uint start, uint length) public view returns (bytes memory) {
+        require(length > 0 && length <= 10, "length out of range");
+
+        uint total = IERC721(asset).balanceOf(owner);
+        require(total > 0, "total balance is zero");
+
+        uint end = start + length - 1;
+        if (end >= total) {
+            end = total - 1;
+        }
+        
+        bytes memory buff;
+        IERC721Metadata meta = IERC721Metadata(asset);
+        IERC721Enumerable enu = IERC721Enumerable(asset);
+        for (uint index = start; index <= end; index++) {
+            uint tokenId = enu.tokenOfOwnerByIndex(owner, index);
+            string memory url = meta.tokenURI(tokenId);
+            buff = abi.encodePacked(
+                buff,
+                ZeroCopySink.WriteUint256(tokenId),
+                ZeroCopySink.WriteVarBytes(bytes(url))
+            );
+        }
+        return buff;
     }
 
     function lock(address fromAsset, uint64 toChainId, address toAddress, uint256 tokenId, address feeToken, uint256 fee, uint id) external payable nonReentrant whenNotPaused {    
