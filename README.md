@@ -30,6 +30,11 @@ when we tranfer back `CryptoKitte` from bsc to ethereum. the mirror `CryptoKitte
 
 in standard erc721 `_mint` is an internal function. so we wrapper this function as an external function to ensure that cross chain success. the contract located in dir of ./contracts/erc721_template. 
 
+the external `mint` interface should be standard as follow:
+```
+function mintWithURI(address to, uint256 tokenId, string memory uri) external
+```
+
 * PolyNFTWrapper contract.
 
 this contract wrap the handling fee processing function and the `safeTransferFrom` interface in the erc721 standard into an interface called lock. and this contract should be deployed in both of source side chain and destination side chain.
