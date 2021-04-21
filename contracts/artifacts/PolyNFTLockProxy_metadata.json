@@ -1,0 +1,539 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "fromAssetHash",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint64",
+						"name": "toChainId",
+						"type": "uint64"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "targetProxyHash",
+						"type": "bytes"
+					}
+				],
+				"name": "BindAssetEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint64",
+						"name": "toChainId",
+						"type": "uint64"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "targetProxyHash",
+						"type": "bytes"
+					}
+				],
+				"name": "BindProxyEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "fromAssetHash",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "fromAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "toAssetHash",
+						"type": "bytes"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "toAddress",
+						"type": "bytes"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint64",
+						"name": "toChainId",
+						"type": "uint64"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "LockEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "manager",
+						"type": "address"
+					}
+				],
+				"name": "SetManagerProxyEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "toAssetHash",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "toAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "UnlockEvent",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint64",
+						"name": "",
+						"type": "uint64"
+					}
+				],
+				"name": "assetHashMap",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "fromAssetHash",
+						"type": "address"
+					},
+					{
+						"internalType": "uint64",
+						"name": "toChainId",
+						"type": "uint64"
+					},
+					{
+						"internalType": "bytes",
+						"name": "toAssetHash",
+						"type": "bytes"
+					}
+				],
+				"name": "bindAssetHash",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "toChainId",
+						"type": "uint64"
+					},
+					{
+						"internalType": "bytes",
+						"name": "targetProxyHash",
+						"type": "bytes"
+					}
+				],
+				"name": "bindProxyHash",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "managerProxyContract",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "onERC721Received",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "",
+						"type": "uint64"
+					}
+				],
+				"name": "proxyHashMap",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "ethCCMProxyAddr",
+						"type": "address"
+					}
+				],
+				"name": "setManagerProxy",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "argsBs",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "fromContractAddr",
+						"type": "bytes"
+					},
+					{
+						"internalType": "uint64",
+						"name": "fromChainId",
+						"type": "uint64"
+					}
+				],
+				"name": "unlock",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"isOwner()": {
+					"details": "Returns true if the caller is the current owner."
+				},
+				"onERC721Received(address,address,uint256,bytes)": {
+					"details": "Whenever an {IERC721} `tokenId` token is transferred to this contract via {IERC721-safeTransferFrom} by `operator` from `from`, this function is called. It must return its Solidity selector to confirm the token transfer. If any other value is returned or the interface is not implemented by the recipient, the transfer will be reverted. The selector can be obtained in Solidity with `IERC721.onERC721Received.selector`."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/PolyNFTLockProxy.sol": "PolyNFTLockProxy"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/PolyNFTLockProxy.sol": {
+			"keccak256": "0x0c32b44787fb4863e4d1b58fc1337345c7eac65103d205f24bfe86715e40c84d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1dea1ea69c07426927d9a0e2d70a030c0979f68cc1b1f980bf3b86820a4b0e92",
+				"dweb:/ipfs/QmdhYKCpY8zZgWMiqjNmBKLC9VGWZJTTzpXw4Hm173Htgz"
+			]
+		},
+		"contracts/core/cross_chain_manager/interface/IEthCrossChainManager.sol": {
+			"keccak256": "0x358dc125906e5abeae21667da42d141e4654d786feac78e0f233e6b6f3fd8285",
+			"urls": [
+				"bzz-raw://5415722433464ef7f5f80e12b73dc798a23219c86f7cbb552b8634f2f10929c1",
+				"dweb:/ipfs/QmPgZYr5YPiCY9FJbw18wPLZYQNi6ddfT2qqWyMUEJK82s"
+			]
+		},
+		"contracts/core/cross_chain_manager/interface/IEthCrossChainManagerProxy.sol": {
+			"keccak256": "0x66c5f60a0350a566dc7b3cfb262cd870df22feb67df783c9895e2dd7d35cf37e",
+			"urls": [
+				"bzz-raw://ff7fdb76bb1ddbedf87e225bc67411f23ee83dcbeb2ba477727ad8965b45543c",
+				"dweb:/ipfs/QmPc3p8LhctLJ4nYJAwnf2HWZvbyR4FYYz6cUaB2h8sdqp"
+			]
+		},
+		"contracts/libs/GSN/Context.sol": {
+			"keccak256": "0x69f25ceac71c3e43a69893af8193b5c8985b96878ac1bc2ee1a3dc7138c98761",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://759bc1558f69c340d62286c8b900309eab1f77f3067213d04d5602e5ec764f14",
+				"dweb:/ipfs/QmcVdHSEBXqRFM5e9u8gLHwq9tQR7mxinrZdBWFfinsmac"
+			]
+		},
+		"contracts/libs/common/ZeroCopySink.sol": {
+			"keccak256": "0x0c1a7abb404b4af8635cdb36156dded3c7a8ba4d8e51452b05586f58b6bee0bc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://27873b1ed15804b71374dcca36d0becddbd56bd6acc22bbb9271d128b6db9448",
+				"dweb:/ipfs/QmXpd3Z5idgLp3cHKmKHUo4kmTLvGnNaKjZVztsbYC2MJc"
+			]
+		},
+		"contracts/libs/common/ZeroCopySource.sol": {
+			"keccak256": "0x50a659fc1cbba45676ce30c73473b514ef524d014b4cbfbb15f1530931802ddf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1bc4eb15ceab2befd8ba59ccb2694f6c1460b21bbea33b526cba5f4c67a3f9e4",
+				"dweb:/ipfs/QmdAU6bpVpktm7peutb5vLpXG8HVxVAqLHx7TJ81Ga5PkX"
+			]
+		},
+		"contracts/libs/introspection/IERC165.sol": {
+			"keccak256": "0xfa152b6e88a1dc50780e8f1580426dc23ad2e1e2c2f086a088adf206a202f453",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5127b264994adab88fae419b1c493efc5acd07134c19ee5c0397e50018291ebf",
+				"dweb:/ipfs/QmWwJZVhvdmvUCdimbb6R2Jiu59zjPqm6XTMchM6LaEHAp"
+			]
+		},
+		"contracts/libs/math/SafeMath.sol": {
+			"keccak256": "0xd7c0b8ddb4da7442327e3945daa9a8866f7b652c0be341c943c499280c31b588",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://59e6cbd076a4de21e8c3cc1827c98f5a04b524c7d49ac352c5e7d80d0ae897fd",
+				"dweb:/ipfs/QmYsfftagooMJBrmHW2DkuocP65KfpQLxf1otmgzLrBXsv"
+			]
+		},
+		"contracts/libs/ownership/Ownable.sol": {
+			"keccak256": "0x66a3b1e935f6e5e0f7d1d7b48a58163774d4488c768ff865ffbe4d7c93480bcd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://87cb1d964b5f7f4536b9409698c8deaa24199d2c73b596ca619a54c3867da68c",
+				"dweb:/ipfs/QmNrGiKzgwu2BrYAEzsEro5z8mvEG5sZNs86DMzjy6qmzC"
+			]
+		},
+		"contracts/libs/token/ERC721/IERC721.sol": {
+			"keccak256": "0xaf936da92f3a9a4f98b237323b5eb1d813fb86c4d07a184beba7027cf0509ba3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://aaa210e132e06975eb9f20060db6ba7dee78f6fce691a1c2489525584de521c0",
+				"dweb:/ipfs/QmRwzi4nUW3UWBwhY5ik2xW3JZo9NMLN5UyGi1xPpMQYrh"
+			]
+		},
+		"contracts/libs/token/ERC721/IERC721Metadata.sol": {
+			"keccak256": "0xe7f984cedc00a138dc27f263c73c32ba9a4b2fd23b6c34ac46f46c074b943538",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0f4acda12f076fe7584921241ddbb5b460ca7cad6cb8a42252ac7f2a9f539127",
+				"dweb:/ipfs/QmQmfhkEv9GrhdWe67QtXnU19AMuoEmy31QnHPkucdYLjZ"
+			]
+		},
+		"contracts/libs/token/ERC721/IERC721Receiver.sol": {
+			"keccak256": "0x42139300eda7e7fb232ab96972cda1abfd1dce2f013937a188f11fd813aeab27",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2042e1d443d327a245a101409ed079e3e207b2cf833cfda4a05483ac090ab9aa",
+				"dweb:/ipfs/QmTC5FVjhMGpzoD9uSGvy1aVmwC2r6mS8mn2tAGXG9AdgT"
+			]
+		},
+		"contracts/libs/utils/Address.sol": {
+			"keccak256": "0xf5fa8cbdffa5ef8be49b246b5628facc30b71707e78a45d80d93b64eff3fe390",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://774e78a9ff32792cc95db4d2ceaf3a7965bb7f0bea5e6cb7cff182b450d44b37",
+				"dweb:/ipfs/QmRRMC4uj7eAcLW7chynA3sNEYULMFazdLwQHKHQPyzAbA"
+			]
+		},
+		"contracts/libs/utils/Utils.sol": {
+			"keccak256": "0x62afae8edfc3a60402f3950cbd1b4e1469f7213fce2dd29c98db69587ca31058",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a18fe0b9cb6d74f53925b437059f34aa0a133ba6a644733feaa5afb000c94720",
+				"dweb:/ipfs/QmYEaFEUrPQjCN7UBkH5Gsi8j1vux2qn28BX3P3CApT7Ge"
+			]
+		}
+	},
+	"version": 1
+}
