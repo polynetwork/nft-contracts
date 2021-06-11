@@ -1,0 +1,251 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getAndCheckTokenUrl",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "ignore",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "start",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "length",
+						"type": "uint256"
+					}
+				],
+				"name": "getFilterTokensByIndex",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "start",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "length",
+						"type": "uint256"
+					}
+				],
+				"name": "getOwnerTokensByIndex",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "args",
+						"type": "bytes"
+					}
+				],
+				"name": "getTokensByIds",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/PolyNFTQuery.sol": "PolyNFTQuery"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/PolyNFTQuery.sol": {
+			"keccak256": "0x308bdb33a1f745585d5c57e8435f284f8e29e14211d99e0420fb219b0a6443d5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ff825da553e905ce1f1486accb1f505b8c9abe1c6b42eb49c8f02b28ab8f091c",
+				"dweb:/ipfs/QmcydgPNUwcsYcXH4bsvWvSNwManEhrwpCLb9o3ZkUDQRr"
+			]
+		},
+		"contracts/interface/IPolyNFTLockProxy.sol": {
+			"keccak256": "0xd50797682ddfb50720eeaaba97946c61fd37164e5477eb989ce084d850eef03e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://55d2840468134781e77cca19c4ed5964334cec3b8ece2e03ee0862c6e393612c",
+				"dweb:/ipfs/QmYXFrPb5mdt1bVcjQiWuChPVK9pX2mwLMwSUdQH3rPTuR"
+			]
+		},
+		"contracts/libs/common/ZeroCopySink.sol": {
+			"keccak256": "0x0c1a7abb404b4af8635cdb36156dded3c7a8ba4d8e51452b05586f58b6bee0bc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://27873b1ed15804b71374dcca36d0becddbd56bd6acc22bbb9271d128b6db9448",
+				"dweb:/ipfs/QmXpd3Z5idgLp3cHKmKHUo4kmTLvGnNaKjZVztsbYC2MJc"
+			]
+		},
+		"contracts/libs/common/ZeroCopySource.sol": {
+			"keccak256": "0x50a659fc1cbba45676ce30c73473b514ef524d014b4cbfbb15f1530931802ddf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1bc4eb15ceab2befd8ba59ccb2694f6c1460b21bbea33b526cba5f4c67a3f9e4",
+				"dweb:/ipfs/QmdAU6bpVpktm7peutb5vLpXG8HVxVAqLHx7TJ81Ga5PkX"
+			]
+		},
+		"contracts/libs/introspection/IERC165.sol": {
+			"keccak256": "0xfa152b6e88a1dc50780e8f1580426dc23ad2e1e2c2f086a088adf206a202f453",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5127b264994adab88fae419b1c493efc5acd07134c19ee5c0397e50018291ebf",
+				"dweb:/ipfs/QmWwJZVhvdmvUCdimbb6R2Jiu59zjPqm6XTMchM6LaEHAp"
+			]
+		},
+		"contracts/libs/math/SafeMath.sol": {
+			"keccak256": "0xd7c0b8ddb4da7442327e3945daa9a8866f7b652c0be341c943c499280c31b588",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://59e6cbd076a4de21e8c3cc1827c98f5a04b524c7d49ac352c5e7d80d0ae897fd",
+				"dweb:/ipfs/QmYsfftagooMJBrmHW2DkuocP65KfpQLxf1otmgzLrBXsv"
+			]
+		},
+		"contracts/libs/token/ERC721/IERC721.sol": {
+			"keccak256": "0xaf936da92f3a9a4f98b237323b5eb1d813fb86c4d07a184beba7027cf0509ba3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://aaa210e132e06975eb9f20060db6ba7dee78f6fce691a1c2489525584de521c0",
+				"dweb:/ipfs/QmRwzi4nUW3UWBwhY5ik2xW3JZo9NMLN5UyGi1xPpMQYrh"
+			]
+		},
+		"contracts/libs/token/ERC721/IERC721Enumerable.sol": {
+			"keccak256": "0x3636662804cd8f474536b2875a9038a4c3fb91879f1bbff48af5c3f140fcd2f0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9fab8521263fa581544000cb57335a3f2e6bcdfbb5579d3ceaa5acf741c67c4f",
+				"dweb:/ipfs/QmZfXnMom7JSNtfyie5yGPN1SUC4SmHbz4ScVBH88URmA7"
+			]
+		},
+		"contracts/libs/token/ERC721/IERC721Metadata.sol": {
+			"keccak256": "0xe7f984cedc00a138dc27f263c73c32ba9a4b2fd23b6c34ac46f46c074b943538",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0f4acda12f076fe7584921241ddbb5b460ca7cad6cb8a42252ac7f2a9f539127",
+				"dweb:/ipfs/QmQmfhkEv9GrhdWe67QtXnU19AMuoEmy31QnHPkucdYLjZ"
+			]
+		}
+	},
+	"version": 1
+}
