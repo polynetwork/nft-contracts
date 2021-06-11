@@ -2,6 +2,7 @@
 
 pragma solidity >=0.5.0;
 
+import "./libs/ownership/Ownable.sol";
 import "./libs/math/SafeMath.sol";
 import "./libs/common/ZeroCopySink.sol";
 import "./libs/common/ZeroCopySource.sol";
@@ -10,8 +11,19 @@ import "./libs/token/ERC721/IERC721Enumerable.sol";
 import "./libs/token/ERC721/IERC721Metadata.sol";
 import "./interface/IPolyNFTLockProxy.sol";
 
-contract PolyNFTQuery {
+contract PolyNFTQuery is Ownable {
     using SafeMath for uint;
+    uint queryLimit;
+
+    constructor(address _owner, uint _limit) public {
+        require(_limit > 0, "!legal");
+        queryLimit = _limit;
+        transferOwnership(_owner);
+    }
+
+    function setQueryLimit(uint _limit) external onlyOwner {
+        queryLimit = _limit;
+    }
 
     function getAndCheckTokenUrl(address asset, address user, uint tokenId) public view returns (bool, string memory) {
         string memory url = "";
@@ -27,7 +39,7 @@ contract PolyNFTQuery {
     // getTokensByIndex index start from 0
     function getOwnerTokensByIndex(address asset, address owner, uint start, uint length) public view returns (bool, bytes memory) {
         bytes memory buff;
-        if (length == 0 || length > 10) {
+        if (length == 0 || length > queryLimit) {
             return (false, buff);
         }
 
@@ -55,7 +67,7 @@ contract PolyNFTQuery {
         bytes memory buff;
 
         (length, off) = ZeroCopySource.NextUint256(args, off);
-        if (length == 0 || length > 10) {
+        if (length == 0 || length > queryLimit) {
             return (false, buff);
         }
 
@@ -70,7 +82,7 @@ contract PolyNFTQuery {
 
     function getFilterTokensByIndex(address asset, address ignore, uint start, uint length) public view returns (bool, bytes memory) {
         bytes memory buff;
-        if (length == 0 || length > 10) {
+        if (length == 0 || length > queryLimit) {
             return (false, buff);
         }
 
