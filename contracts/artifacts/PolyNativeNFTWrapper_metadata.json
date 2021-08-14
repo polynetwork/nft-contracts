@@ -414,11 +414,11 @@
 	},
 	"sources": {
 		"contracts/PolyNativeNFTWrapper.sol": {
-			"keccak256": "0x370fd7316d346c7536939d398f0fa169602c50f6d22a5447df27fefd8c30aa84",
+			"keccak256": "0x771298145605c830d62d214a90dab944534027fc69528948963950e8a08e0cef",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3b22b1d7ff6dcc73a4b91bbe92961a65671c91bac9b8f4e787b4c1bcfdc40a6b",
-				"dweb:/ipfs/QmYovdkW3kzQmszsrhC5SGV6cYjwpvP9AkR7EikhVTSN34"
+				"bzz-raw://bb3d4be6323722ed00f91556cb743c7d7f7affc6ed37587de8cc1bbe729a8e10",
+				"dweb:/ipfs/QmQ3hd9akyqfycvELMSpse9jD2YbFWKuN7GmoKcsQmNsek"
 			]
 		},
 		"contracts/interface/IPolyNFTLockProxy.sol": {

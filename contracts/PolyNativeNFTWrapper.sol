@@ -77,10 +77,12 @@ contract PolyNativeNFTWrapper is Ownable, Pausable, ReentrancyGuard {
         emit PolyWrapperSpeedUp(feeToken, txHash, msg.sender, fee);
     }
 
-    // todo: 收费
     function _pull(address feeToken, uint256 fee) internal {
-        // (succeed, returnData) = _toContract.call(abi.encodePacked(bytes4(keccak256(abi.encodePacked("lock", "(uint64,bytes,uint256)"))), abi.encode(toChainId, toAddress, amount)));
-        // require(succeed, "");
+        if (feeToken == address(0)) {
+            require(msg.value == fee, "insufficient ether");
+        } else {
+            IERC20(feeToken).safeTransferFrom(msg.sender, address(this), fee);
+        }
     }
 
     function _push(address fromAsset, uint64 toChainId, address toAddress, uint256 tokenId) internal {
@@ -94,7 +96,7 @@ contract PolyNativeNFTWrapper is Ownable, Pausable, ReentrancyGuard {
         bytes memory returnData;
         address _callContract = address(fromAsset);
         (succeed, returnData) = _callContract.call(abi.encodePacked(bytes4(keccak256(abi.encodePacked("safeTransferFrom", "(address,address,uint256,bytes)"))), abi.encode(msg.sender, lockProxy, tokenId, callData)));
-        require(succeed, "native transfer failed");
+        require(succeed, "native safeTransferFrom failed");
     }
 
     function _serializeCallArgs(CallArgs memory args) internal pure returns (bytes memory) {
