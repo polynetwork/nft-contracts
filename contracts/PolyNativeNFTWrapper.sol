@@ -77,12 +77,10 @@ contract PolyNativeNFTWrapper is Ownable, Pausable, ReentrancyGuard {
         emit PolyWrapperSpeedUp(feeToken, txHash, msg.sender, fee);
     }
 
+    // todo: 收费
     function _pull(address feeToken, uint256 fee) internal {
-        if (feeToken == address(0)) {
-            require(msg.value == fee, "insufficient ether");
-        } else {
-            IERC20(feeToken).safeTransferFrom(msg.sender, address(this), fee);
-        }
+        // (succeed, returnData) = _toContract.call(abi.encodePacked(bytes4(keccak256(abi.encodePacked("lock", "(uint64,bytes,uint256)"))), abi.encode(toChainId, toAddress, amount)));
+        // require(succeed, "");
     }
 
     function _push(address fromAsset, uint64 toChainId, address toAddress, uint256 tokenId) internal {
