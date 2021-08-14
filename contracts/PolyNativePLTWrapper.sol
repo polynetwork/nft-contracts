@@ -46,10 +46,9 @@ contract PolyWrapper is Ownable, Pausable, ReentrancyGuard {
     
     function lock(address fromAsset, uint64 toChainId, bytes memory toAddress, uint amount, uint fee, uint id) external payable nonReentrant whenNotPaused {
         require(toChainId != chainId && toChainId != 0, "!toChainId");
-        // require(amount > fee, "amount less than fee");
+        require(amount > fee, "amount less than fee");
         
-        // _pull(fromAsset, amount);
-
+        _pull(fromAsset, fee);
         _push(fromAsset, toChainId, toAddress, amount.sub(fee));
 
         emit PolyWrapperLock(fromAsset, msg.sender, toChainId, toAddress, amount.sub(fee), fee, id);
@@ -69,15 +68,8 @@ contract PolyWrapper is Ownable, Pausable, ReentrancyGuard {
     }
 
     function _push(address fromAsset, uint64 toChainId, bytes memory toAddress, uint amount) internal {
-        // if (fromAsset == address(0)) {
-        //     require(lockProxy.lock{value: amount}(fromAsset, toChainId, toAddress, amount), "lock ether fail");
-        // } else {
-        //     IERC20(fromAsset).safeApprove(address(lockProxy), amount);
-        //     _nativeCallWrapLock();
-        // }
         bool succeed;
         bytes memory returnData;
-        // IERC20(fromAsset).safeApprove(address(lockproxy), amount);
         address _toContract = address(lockproxy);
         (succeed, returnData) = _toContract.call(abi.encodePacked(bytes4(keccak256(abi.encodePacked("lock", "(uint64,bytes,uint256)"))), abi.encode(toChainId, toAddress, amount)));
         require(succeed, "native transfer failed");
