@@ -21,6 +21,7 @@ contract PolyNativeNFTWrapper is Ownable, Pausable, ReentrancyGuard {
     uint public chainId;
     address public feeCollector;
     address public lockProxy;
+    address public fixFeeToken;
     
     struct CallArgs {
         bytes toAddress;
@@ -30,10 +31,11 @@ contract PolyNativeNFTWrapper is Ownable, Pausable, ReentrancyGuard {
     event PolyWrapperLock(address indexed fromAsset, address indexed sender, uint64 toChainId, address toAddress, uint256 tokenId, address feeToken, uint256 fee, uint id);
     event PolyWrapperSpeedUp(address indexed feeToken, bytes indexed txHash, address indexed sender, uint256 efee);
 
-    constructor(address _owner, uint _chainId) public {
+    constructor(address _owner, uint _chainId, address _feeToken) public {
         require(_chainId != 0, "!legal");
         transferOwnership(_owner);
         chainId = _chainId;
+        fixFeeToken = _feeToken;
     }
     
     function setFeeCollector(address collector) external onlyOwner {
@@ -66,7 +68,9 @@ contract PolyNativeNFTWrapper is Ownable, Pausable, ReentrancyGuard {
 
     function lock(address fromAsset, uint64 toChainId, address toAddress, uint256 tokenId, address feeToken, uint256 fee, uint id) external payable nonReentrant whenNotPaused {    
         require(toChainId != chainId && toChainId != 0, "!toChainId");
-
+        if (feeToken == address(0)) {
+            feeToken = address(fixFeeToken);    
+        }
         _pull(feeToken, fee);
         _push(fromAsset, toChainId, toAddress, tokenId);
         emit PolyWrapperLock(fromAsset, msg.sender, toChainId, toAddress, tokenId, feeToken, fee, id);
