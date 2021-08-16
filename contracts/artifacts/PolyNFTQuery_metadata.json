@@ -9,6 +9,41 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_limit",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
 						"name": "asset",
 						"type": "address"
 					},
@@ -145,11 +180,83 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_limit",
+						"type": "uint256"
+					}
+				],
+				"name": "setQueryLimit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
 			"kind": "dev",
-			"methods": {},
+			"methods": {
+				"isOwner()": {
+					"details": "Returns true if the caller is the current owner."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
 			"version": 1
 		},
 		"userdoc": {
@@ -175,11 +282,11 @@
 	},
 	"sources": {
 		"contracts/PolyNFTQuery.sol": {
-			"keccak256": "0x308bdb33a1f745585d5c57e8435f284f8e29e14211d99e0420fb219b0a6443d5",
+			"keccak256": "0xa0fa30e3847f6247978b14c10e94b15aa97ad2a41145ae303853732c1027e7bd",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ff825da553e905ce1f1486accb1f505b8c9abe1c6b42eb49c8f02b28ab8f091c",
-				"dweb:/ipfs/QmcydgPNUwcsYcXH4bsvWvSNwManEhrwpCLb9o3ZkUDQRr"
+				"bzz-raw://225c885ebdfda34237047a262cb011ffd225b7e078c346311d38a6e3e072801e",
+				"dweb:/ipfs/QmTSvcTZeRgDgPh3Ezqg3fubownFWW1F6hPGKeE4AP1rTo"
 			]
 		},
 		"contracts/interface/IPolyNFTLockProxy.sol": {
@@ -188,6 +295,14 @@
 			"urls": [
 				"bzz-raw://55d2840468134781e77cca19c4ed5964334cec3b8ece2e03ee0862c6e393612c",
 				"dweb:/ipfs/QmYXFrPb5mdt1bVcjQiWuChPVK9pX2mwLMwSUdQH3rPTuR"
+			]
+		},
+		"contracts/libs/GSN/Context.sol": {
+			"keccak256": "0x69f25ceac71c3e43a69893af8193b5c8985b96878ac1bc2ee1a3dc7138c98761",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://759bc1558f69c340d62286c8b900309eab1f77f3067213d04d5602e5ec764f14",
+				"dweb:/ipfs/QmcVdHSEBXqRFM5e9u8gLHwq9tQR7mxinrZdBWFfinsmac"
 			]
 		},
 		"contracts/libs/common/ZeroCopySink.sol": {
@@ -220,6 +335,14 @@
 			"urls": [
 				"bzz-raw://59e6cbd076a4de21e8c3cc1827c98f5a04b524c7d49ac352c5e7d80d0ae897fd",
 				"dweb:/ipfs/QmYsfftagooMJBrmHW2DkuocP65KfpQLxf1otmgzLrBXsv"
+			]
+		},
+		"contracts/libs/ownership/Ownable.sol": {
+			"keccak256": "0x66a3b1e935f6e5e0f7d1d7b48a58163774d4488c768ff865ffbe4d7c93480bcd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://87cb1d964b5f7f4536b9409698c8deaa24199d2c73b596ca619a54c3867da68c",
+				"dweb:/ipfs/QmNrGiKzgwu2BrYAEzsEro5z8mvEG5sZNs86DMzjy6qmzC"
 			]
 		},
 		"contracts/libs/token/ERC721/IERC721.sol": {
