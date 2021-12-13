@@ -14,7 +14,7 @@ import "./libs/token/ERC721/IERC721Metadata.sol";
 import "./libs/utils/ReentrancyGuard.sol";
 import "./interface/IPolyNFTLockProxy.sol";
 
-contract PolyNativeNFTWrapper is Ownable, Pausable, ReentrancyGuard {
+contract PolyNativeNFTWrapperFixFeeCollector is Ownable, Pausable, ReentrancyGuard {
     using SafeMath for uint;
     using SafeERC20 for IERC20;
 
