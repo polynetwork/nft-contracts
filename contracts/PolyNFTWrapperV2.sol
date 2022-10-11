@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.5.0;
+pragma solidity ^0.6.0;
 
 import "./libs/ownership/Ownable.sol";
 import "./libs/token/ERC20/SafeERC20.sol";
@@ -47,13 +47,13 @@ contract PolyNFTWrapperV2 is Ownable, Pausable, ReentrancyGuard {
         require(_lockProxy != address(0));
         require(lockProxyIndexMap[index] != address(0), "no lockproxy exsist in given index");
         lockProxyIndexMap[index] = _lockProxy;
-        require(ILockProxy(_lockProxy).managerProxyContract() != address(0), "not lockproxy");
+        require(IPolyNFTLockProxy(_lockProxy).managerProxyContract() != address(0), "not lockproxy");
     }
 
     function addLockProxy(address _lockProxy) external onlyOwner {
         require(_lockProxy != address(0));
         lockProxyIndexMap[maxLockProxyIndex++] = _lockProxy;
-        require(ILockProxy(_lockProxy).managerProxyContract() != address(0), "not lockproxy");
+        require(IPolyNFTLockProxy(_lockProxy).managerProxyContract() != address(0), "not lockproxy");
     }
 
     function pause() external onlyOwner {
@@ -124,7 +124,7 @@ contract PolyNFTWrapperV2 is Ownable, Pausable, ReentrancyGuard {
     function _getSupportLockProxy(address fromAsset, uint64 toChainId) internal view returns(address) {
         for (uint i=0;i<maxLockProxyIndex;i++) {
             address lockProxy = lockProxyIndexMap[i];
-            if (ILockProxy(lockProxy).assetHashMap(fromAsset, toChainId).length != 0) {
+            if (IPolyNFTLockProxy(lockProxy).assetHashMap(fromAsset, toChainId).length != 0) {
                 return lockProxy;
             }
         }
